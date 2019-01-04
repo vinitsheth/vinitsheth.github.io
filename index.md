@@ -4,9 +4,9 @@ title: Vinit Sheth
 description: "Vinit Sheth's Website"
 tags: [Jekyll, theme, responsive, blog, template]
 image:
-  feature: /images/website_images/vinit-cover.jpeg
+  feature: /images/website_images/vinit-cover-1.jpg
 ---
-
+<!--- 
 <div>
 <img id = "signature" src = "{{ site.url }}/images/author_images/leimao_chinese_cropped.png">
 <style>
@@ -17,7 +17,7 @@ image:
 }
 </style>
 </div>
-
+--->
 <br />
 
 <div class = "titled-image">
