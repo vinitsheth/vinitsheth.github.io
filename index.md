@@ -36,6 +36,7 @@ My name is Vinit Sheth. I am a master student in the Department of Computer Scie
 <br />
 
 I also graduated with a bachelor's degree in Computer Engineering from Gujarat Technological University, Ahmedabad, India.
+I joined Arizona State University in August 2018 right after graduating from Gujarat Technological University in June 2018. I plan to graduate from ASU in May 2020.
 
 <br />
 
