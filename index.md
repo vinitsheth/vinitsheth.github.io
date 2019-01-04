@@ -18,6 +18,7 @@ image:
 </style>
 </div>
 --->
+<!--- 
 <br />
 
 <div class = "titled-image">
@@ -26,7 +27,7 @@ image:
     <figcaption>Lei Mao at the Great Smoky Mountain in 2015</figcaption>
 </figure>
 </div>
-
+-->
 
 ### Who am I
 
