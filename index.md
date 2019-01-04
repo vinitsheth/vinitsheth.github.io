@@ -4,7 +4,7 @@ title: Vinit Sheth
 description: "Vinit Sheth's Website"
 tags: [Jekyll, theme, responsive, blog, template]
 image:
-  feature: /images/website_images/vinit-cover.jpg
+  feature: /images/website_images/vinit-cover.jpeg
 ---
 
 <div>
