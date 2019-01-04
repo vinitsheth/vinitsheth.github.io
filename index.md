@@ -30,19 +30,16 @@ image:
 
 ### Who am I
 
-My name is Lei Mao. I am a master student in the Department of Computer Science at the University of Chicago. My research interests are mainly in the areas of machine learning and artificial intelligence. 
+My name is Vinit Sheth. I am a master student in the Department of Computer Science at Arizona State University. My research interests are mainly in the areas of machine learning and artificial intelligence. 
 
 <br />
 
-Before I went to the University of Chicago, I was a PhD candidate in the Department of Biochemistry at Duke University. I also graduated with a bachelor's degree in Biotechnology from Dalian University of Technology in China.
+I also graduated with a bachelor's degree in Computer Engineering from Gujarat Technological University, Ahmedabad, India.
 
 <br />
 
 I am a perfectionist. I want to solve the problems in my hands in perfect ways, which is, however, not achievable in many situations.
 
-### Career Change
-
-I believe I am a true scientist. However, I was not convinced that biology could be considered as "science" at the current level of human civilization when I was at Duke University. That is part of the motivations which causes me to leave this field. I should be thankful that I have learned math and programming well in college, and I met machine learning when I was at the lowest point of my life. 
 
 <br />
 
@@ -50,7 +47,7 @@ With the help from MOOC, I was able to quickly catch up. I have done a good numb
 
 ### About This Site
 
-This website was formally built in the spring of 2017, but the style of the site has been changed several times. 
+This website was formally built in the spring of 2019, but the style of the site has been changed several times. 
 
 <br />
 
@@ -62,5 +59,5 @@ The main purposes of this website are listed here:
 
 ### Contact Me
 
-I do not use social applications quite often. The best way to reach me is [Email](mailto:dukeleimao@gmail.com).
+I do not use social applications quite often. The best way to reach me is [Email](mailto:vsheth2@asu.edu).
 
