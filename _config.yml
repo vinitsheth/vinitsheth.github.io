@@ -48,7 +48,7 @@ links:
 #    url: /following/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/Chicago
+timezone:    America/Phoenix
 future:      true
 #pygments:    true
 highlighter: rouge
