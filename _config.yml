@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Vinit Sheth's Website"
 title_separator          : "-"
 name                     : "Vinit Sheth"
-description              : "An amazing website."
+description              : "My portfolio"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,11 +103,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Vinit Sheth"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Data Science, Machine Learning, Artificial Intelligence."
+  location         : "Tempe, AZ"
+  email            : "vsheth2@asu.edu"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
