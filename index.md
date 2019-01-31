@@ -54,10 +54,9 @@ This website was formally built in the spring of 2019, but the style of the site
 <br />
 
 The main purposes of this website are listed here:
-* Discuss the math and the technical details of machine learning and computer science theories
-* Document the implementation of algorithms to solve real problems
-* Present my independent research projects
-* Record my personal achievements
+* Demonstrate my educational and professional qualifications.
+* Provide detail description about the projects I have worked on.
+* Provide information about my techenical skills.
 
 ### Contact Me
 
