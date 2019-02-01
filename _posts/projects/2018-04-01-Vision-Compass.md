@@ -12,7 +12,7 @@ share: true
 
 ### Introduction
 
-Visually Impaired person has heightened senses of touch to differentiate between different objects. But sometimes they still have a difficult time differentiating similar products like a bottle of coke vs a bottle of Pepsi. So we created Vision Compass to help them through the mundane day to day tasks and they don't have to be dependent on others for that.
+Visually Impaired person generally has heightened senses of touch to differentiate between different objects. But sometimes they still have a difficult time differentiating similar products like a bottle of coke vs a bottle of Pepsi. So we created Vision Compass to help them through the mundane day to day tasks and they don't have to be dependent on others for that.
 
 <br />
 
