@@ -7,5 +7,5 @@ modified: 8-7-2014
 comments: false
 ---
 
-You can also download my [resume](https://github.com/vinitsheth/resume-cv/blob/master/Vinit_resume.pdf), in PDF or visit my [LinkedIn](https://www.linkedin.com/in/vinit-sheth/). Last updated on 1/2/2019.
+You can also download my [resume](https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ), in PDF or visit my [LinkedIn](https://www.linkedin.com/in/vinit-sheth/). Last updated on 1/2/2019.
 

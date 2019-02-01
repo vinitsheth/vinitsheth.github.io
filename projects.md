@@ -16,7 +16,7 @@ comments: false
   {% capture year_previous %}{{ post.date | date: '%Y' }}{% endcapture %}
 
   <h3><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-  <p><i><small>Posted: {{ post.date | date: "%B %-d, %Y"}} Updated: {{ post.modified | date: "%B %-d, %Y"}}</small></i></p>
+  <p><i><small>Posted: {{ post.date | date: "%B %-d, %Y"}}</small></i></p>
   {% if post.image.teaser %}
   <figure>
     <a href="{{ site.url }}{{ post.url }}"><img src="{{ site.url }}{{ post.image.teaser }}"></a>
