@@ -12,7 +12,7 @@ share: true
 
 ### Introduction
 
-Visually Impaired person has heightened senses of touch to differentiate between different objects. But sometimes they still have difficult time differentiating similar products like bottle of coke vs bottle of pepsi. So we created Vision Compass to help them through the mundane day to day tasks and they don't have to be dependent on others for that.
+Visually Impaired person has heightened senses of touch to differentiate between different objects. But sometimes they still have a difficult time differentiating similar products like a bottle of coke vs a bottle of Pepsi. So we created Vision Compass to help them through the mundane day to day tasks and they don't have to be dependent on others for that.
 
 <br />
 
@@ -21,14 +21,22 @@ Vision compass is an android application which operates with minimal user intera
 <br />
 
 
-Vision Compass speakes the label of the product which is placed in front of the smartphone camera using openCV and google vision Api.
+Vision Compass speaks the label of the product which is placed in front of the smartphone camera using OpenCV and Google Vision API.
 
 <br/>
 The Project was started by me as final year project for my Undergrad. We worked closely with The Blind People's association Ahmedabad for developing the prototype of the application.
 
 <br/>
-Due to its significance and practical use case the projcet was later selected by the central government of India.
-The project is now funded by the  government  under its Startup and Innovation Policy.
+Due to its significance and practical use case, the project was later selected by the central government of India.
+The project is now funded by the government  under its Startup and Innovation Policy.
+
+### Technologies and Tools 
+
+* Android 
+* Android Studio
+* Computer Vision
+* OpenCV
+* Java
 
 ### Acknowledgment
 
