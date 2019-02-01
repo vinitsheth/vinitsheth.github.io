@@ -31,12 +31,13 @@ bing_verify:
 links:
  - title: Curriculum
    url: /cv/
+  - title: Projects
+    url: /projects/
 #  - title: Blog
 #    url: /blog/
 #  - title: Articles
 #    url: /articles/
-  - title: Projects
-    url: /projects/
+  
 #  - title: Readings
 #    url: /readings/
 #  - title: Publications
