@@ -35,9 +35,9 @@ links:
 #    url: /blog/
 #  - title: Articles
 #    url: /articles/
-#  - title: Projects
+  - title: Projects
     url: /projects/
-  - title: Readings
+#  - title: Readings
 #    url: /readings/
 #  - title: Publications
 #    url: /publications/
