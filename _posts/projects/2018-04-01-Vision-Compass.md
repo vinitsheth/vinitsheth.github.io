@@ -3,10 +3,11 @@ layout: post
 title: Vision Compass 
 excerpt: "Android App for helping visually impaired person"
 categories: project
+modified: 2019-01-31
 tags: [Computer Vision, Android]
   
-#comments: true
-#share: true
+comments: true
+share: true
 ---
 
 ### Introduction
