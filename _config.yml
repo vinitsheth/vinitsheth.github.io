@@ -31,8 +31,8 @@ bing_verify:
 links:
     - title: Curriculum
       url: /cv/
-    - title: Projects
-      url: /projects/
+#    - title: Projects
+#      url: /projects/
 #    - title: Blog
 #      url: /blog/
 #  - title: Articles
