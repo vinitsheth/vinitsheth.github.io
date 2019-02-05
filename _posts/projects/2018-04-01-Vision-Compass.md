@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Vision Compass 
-excerpt: "Android App for helping visually impaired person"
+excerpt: "Android App for helping visually impaired person in their day to day tasks using Computer Vision, Google Vision API."
 categories: project
 modified: 2019-01-31
-tags: [Computer Vision, Android]
-  
+tags: [Computer Vision, Android, Google Vision Api, OpenCV]
+
 comments: true
 share: true
 ---
