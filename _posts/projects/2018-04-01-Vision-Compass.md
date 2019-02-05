@@ -37,6 +37,7 @@ The project is now funded by the government  under its Startup and Innovation Po
 * Computer Vision
 * OpenCV
 * Java
+* Google Vision API
 
 ### Acknowledgment
 
