@@ -20,14 +20,14 @@ owner:
   github: vinitsheth
   facebook: vinitgsheth
 # Analytics and webmaster tools stuff goes here
-google_analytics: UA-105680508-1
-google_verify: KFWZJ6GsxCUxQRDDrkkQJ2jgRDVUdgUbTMXXltDss84
+google_analytics: UA-133931159-1
+#google_verify: KFWZJ6GsxCUxQRDDrkkQJ2jgRDVUdgUbTMXXltDss84
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
-
+search: true
 links:
     - title: Curriculum
       url: /cv/
