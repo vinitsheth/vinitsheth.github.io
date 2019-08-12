@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://localhost:4000</loc>
+    </url>
+    
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2017-07-30-Chomp-AI/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2017-07-30-Flappy-Bird-AI/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2017-07-30-Intelligent-Mouse/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2017-08-15-WikiMidas-MoeGirlMidas/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2017-08-26-Image-Resizer-Web-App/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2017-09-20-Google-DeepDream-API/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2018-01-12-Text-Language-Identifier/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2018-04-01-Vision-Compass/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2018-06-10-Image-Converter-CycleGAN/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2018-06-13-Voice-Converter-CycleGAN/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2018-07-19-Particle-Filter/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/Extras/2018-12-11-DeepLab-V3/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/404/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/articles/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/courses/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/cv/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/following/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/miscellaneous/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/projects/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/publications/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/readings/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/sitemap.xml</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/tools/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/assets/css/style.css</loc>
+    </url>
+    
+
+    
+    <url>
+        <loc>http://localhost:4000/project/Fmri/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/TensorFlow-Dataset-API/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Image-Pyramids-In-Deep-Learning/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Maximum-Likelihood-Estimation-Ngram/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Jupyter-Notebook-On-Docker/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/TensorBoard-On-Docker/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/LogSumExp/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Docker-Experience/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/Alpha-Zero/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/project/Vision-Compass/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Jekyll-Site-Locally/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Multivariate-Gaussian-Covariance-Matrix/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Huffman-Coding/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Pseudolikelihood/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/miscellaneous/mooc/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/miscellaneous/tools/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/miscellaneous/followings/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Python-Callable-Object/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Going-into-GANs/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/2017-Duckie-Town-Experience/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Configure-MySQL-Services-Windows/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/Siamese-Network-MNIST/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/reading/2016-NIPS_GANs_Tutorial/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/Google-DeepDream-Python/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/reading/2017-Deep-Learning-Vehicle-Localization-Satellite-Image/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/reading/2015-Vehicle-Localization-Satellite-Image/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/reading/Stephen-Marsland-Book-Machine-Learning-2nd/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/reading/2015-Nature-Review-Deep-Learning/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Max-Pooling-Backpropagation/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/PythonAnywhere-WebApps-Getting-Started/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Explaining-Away-Belief-Network/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Gibbs-Sampler/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Self-Organizing-Map/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Optimization-Methods/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Support-Vector-Regressor/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Weights-Initialization/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Programmable-Backpropagation/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Normal-Equation-Matrix-Calculus/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Perceptron-Convergence-Theorem/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/blog/Bias-Variance-Dilemma/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/Reinforcement-Learning-Agent-Library/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/REINFORCE-Policy-Gradient/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/Deep-Q-Learning-CartPole/</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/article/Flappy-Bird-AI/</loc>
+    </url>
+    
+</urlset>

@@ -1,0 +1,356 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+	    .article-wrap img{border-radius: 5px;}
+		.titled-image figure{text-align: center;}
+	</style>
+	<meta charset="utf-8">
+<title>Vinit Sheth's Website  &#8211; Monte Carlo Policy Gradient in OpenAI-Gym LunarLander </title>
+<meta name="description" content="">
+<meta name="keywords" content="artificial intelligence, deep learning, reinforcement learning">
+
+
+
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Monte Carlo Policy Gradient in OpenAI-Gym LunarLander">
+<meta property="og:description" content="Welcome to my site.">
+<meta property="og:url" content="http://localhost:4000/article/REINFORCE-Policy-Gradient/">
+<meta property="og:site_name" content="Vinit Sheth's Website">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/article/REINFORCE-Policy-Gradient/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Vinit Sheth's Website Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://localhost:4000/images/apple-icon-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000">Vinit Sheth's Website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="http://localhost:4000/cv/" >Curriculum</a></li>
+		        
+				<li><a href="http://localhost:4000/projects/" >Projects</a></li>
+		        
+				<li><a href="http://localhost:4000/courses/" >Courses</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+  </div>
+  <article>
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/article/REINFORCE-Policy-Gradient/" rel="bookmark" title="Monte Carlo Policy Gradient in OpenAI-Gym LunarLander">Monte Carlo Policy Gradient in OpenAI-Gym LunarLander</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="introduction">Introduction</h3>
+
+<p><a href="https://gym.openai.com/envs/LunarLander-v2">LunarLander</a> is one of the learning environment in OpenAI Gym. I have actually tried to solve this learning problem using Deep Q-Learning which I have successfully used to train the CartPole environment in OpenAI Gym and the Flappy Bird game. However, I was not able to get good training performance in a reasonable amount of episodes. The lunarlander controlled by AI only learned how to steadily float in the air but was not able to successfully land within the time requested.</p>
+
+<p><br /></p>
+
+<p>Here I am going to tackle this LunarLander problem using a new alogirthm called “REINFORCE” or “Monte Carlo Policy Gradient”.</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-04-REINFORCE-Policy-Gradient/lunarlander.png" alt="" /></p>
+
+<h3 id="touch-the-algorithm">Touch the Algorithm</h3>
+
+<p>Algorithm from <a href="http://incompleteideas.net/sutton/book/the-book-2nd.html">Sutton Book draft</a></p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-04-REINFORCE-Policy-Gradient/Sutton_REINFORCE.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>Algorithm from <a href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html">Silver Courseware</a></p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-04-REINFORCE-Policy-Gradient/Silver_REINFORCE.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>Note that the \(G_t\) item in Sutton’s REINFORCE algorithm and the \(v_t\) item in Silver’s REINFORCE algorithm are the same thing.</p>
+
+<script type="math/tex; mode=display">G_t = R_{t+1} + \gamma \times R_{t+2} + \gamma^2 \times R_{t+3} + ... + \gamma^{T-t+1} \times R_{T}</script>
+
+<p>However, Silver’s REINFORCE algorithm lacked a \( \gamma^t \) item than Sutton’s algorithm. It turned out that both of the algorithms are correct. Sutton’s algorithm worked for the episodic case maximizing the value of start state, while Silver’s algorithm worked for the continuing case maximizing the averaged value. The lunarlander problem is a continuing case, so I am going to implement Silver’s REINFORCE algorithm without including the \( \gamma^t \) item.</p>
+
+<h3 id="make-openai-deep-reinforce-class">Make OpenAI Deep REINFORCE Class</h3>
+
+<p>The main neural network in Deep REINFORCE Class, which is called policy network, taks the observation as input and outputs the softmaxed probability for all actions available.</p>
+
+<p><br /></p>
+
+<p>This algorithm is very conceptually simple. However, I got stuck for a while when I firstly tried to implement it on my computer. We have got used to use deep learning libraries, such as tensorflow, to calculate derivatives for convenience. The tensorflow allows us to optimize the parameters in the neural network by minimizing some loss functions. However, from the REINFORCE algorithm, it seems that we have to manually calculate the derivatives and optimize the parameters through iterations.</p>
+
+<p><br /></p>
+
+<p>One of way to overcome this is to construct a loss function whose minimization derivative udpate is exactly the same to the one in the algorithm. One simple loss function could be \( -\log{\pi}(A_t \mid S_t,\theta) \times v_t \). Note that \( -\log{\pi}(A_t \mid S_t,\theta) \) is the cross entropy of softmaxed action prediction and labeled action.</p>
+
+<h3 id="test-openai-deep-reinforce-class-in-openai-gym-lunarlander-environment">Test OpenAI Deep REINFORCE Class in OpenAI Gym LunarLander Environment</h3>
+
+<h4 id="key-parameters">Key Parameters</h4>
+
+<p>FC-16 -&gt; FC-32</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">GAMMA</span> <span class="o">=</span> <span class="mf">0.99</span> <span class="c"># decay rate of past observations</span>
+<span class="n">LEARNING_RATE</span> <span class="o">=</span> <span class="mf">0.005</span> <span class="c"># learning rate in deep learning</span>
+<span class="n">RAND_SEED</span> <span class="o">=</span> <span class="mi">0</span> <span class="c"># random seed</span>
+</code></pre></div></div>
+<h4 id="algorithm-performance">Algorithm Performance</h4>
+
+<p>Before Training:</p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-04-REINFORCE-Policy-Gradient/episode_0.gif" alt="" /></p>
+
+<p>After Training:</p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-04-REINFORCE-Policy-Gradient/episode_3000.gif" alt="" /></p>
+
+<h4 id="openai-gym-evaluation">OpenAI Gym Evaluation</h4>
+
+<p>Solved after 1476 episodes. Best 100-episode average reward was 203.29 ± 4.98.</p>
+
+<p><a href="https://gym.openai.com/evaluations/eval_6QdRxa5TuOD6GbmpbpsCw">https://gym.openai.com/evaluations/eval_6QdRxa5TuOD6GbmpbpsCw</a></p>
+
+<p>This algorithm did solve the problem as OpenAI Gym requested. However, it suffered from high vairance problem. I tried to tune the hyperparameters and change the size of neural network. But this did not help significantly.</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-04-REINFORCE-Policy-Gradient/training_record_lunarlander.jpeg" alt="" /></p>
+
+<h3 id="links-to-github">Links to Github</h3>
+
+<p><a href="https://github.com/leimao/OpenAI_Gym_AI/tree/master/LunarLander-v2/REINFORCE/2017-05-24-v1">https://github.com/leimao/OpenAI_Gym_AI/tree/master/LunarLander-v2/REINFORCE/2017-05-24-v1</a></p>
+
+<h3 id="conclusions">Conclusions</h3>
+
+<p>REINFORCE Monte Carlo Policy Gradient solved the LunarLander problem which Deep Q-Learning did not solve. However, it suffered from high variance problem. One may try REINFORCE with baseline Policy Gradient or actor-critic method to reduce variance during the training. I will write a blog once I implemented these new algorithm to solve the LunarLander problem.</p>
+
+<h3 id="notes">Notes</h3>
+
+<h4 id="2017-5-4">2017-5-4</h4>
+
+<p>To implement Policy Gradients Reinforcement Learning, I recommended to use Tensorflow but not Keras, because you may have to introduce a lot of user-defined loss functions. Some of the customized loss functions could be easily defined in Keras, some of them are not. If you are comfortable with doing gradient descent by yourself, you do not even have to use tensorflow.</p>
+
+<p><br /></p>
+
+<p>I also tried REINFORCE to solve CartPole and MountainCar Problem in OpenAI Gym.</p>
+
+<p><br /></p>
+
+<p>REINFORCE successfully solved CartPole in a very shot period of time. However, it still suffered from high variance problem (<a href="https://gym.openai.com/evaluations/eval_juc7UYABTFmahgF80oBIA">example</a>). After tuning the model, one may get reasonable learning performance without too much variance(<a href="https://gym.openai.com/evaluations/eval_KINLU2HNSHiI331ecc6F8A">example</a>). The code example could be found <a href="https://github.com/leimao/OpenAI_Gym_AI/tree/master/CartPole-v0/REINFORCE/2017-05-03-v1">here</a>.</p>
+
+<p><br /></p>
+
+<p>REINFORCE never solved MountainCar problem unless I cheated. This is because it is extremely difficult (probability is extremely low) to get the top of the mountain without learning thoroughly. The learning agent always get -200 reward in each episode. Therefore, the learning algorithm is useless. However, if the MountainCar problem is unwrapped, which means the game lasts forever unless the car goes to the top of the mountain, there could be appropriate gradient descent to solve the problem. Alternatively, one could engineer the reward that the API returns. By rewarding differently, say the higher the car goes the more reward it received, the car could easily learn how to climb. However, these are considered cheating because these does not provide any proof of the goodness of the learning algorithm itself.</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+        </div>
+       <!-- <p class="byline"><strong>Monte Carlo Policy Gradient in OpenAI-Gym LunarLander</strong> was published on <time datetime="2017-05-04T00:00:00-07:00">May 04, 2017</time> and last modified on <time datetime="2017-05-04">May 04, 2017</time> by <a href="http://localhost:4000" title="About Vinit Sheth">Vinit Sheth</a>.</p> -->
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    <span>&copy; 2019 Vinit Sheth. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<!-- Old
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-133931159-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+<!-- New -->
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133931159-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vinitsheth-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

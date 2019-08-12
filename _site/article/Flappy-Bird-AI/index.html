@@ -1,0 +1,305 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+	    .article-wrap img{border-radius: 5px;}
+		.titled-image figure{text-align: center;}
+	</style>
+	<meta charset="utf-8">
+<title>Vinit Sheth's Website  &#8211; Deep Q-Learning in Flappy Bird Game </title>
+<meta name="description" content="">
+<meta name="keywords" content="artificial intelligence, deep learning, reinforcement learning, computer vision">
+
+
+
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep Q-Learning in Flappy Bird Game">
+<meta property="og:description" content="Welcome to my site.">
+<meta property="og:url" content="http://localhost:4000/article/Flappy-Bird-AI/">
+<meta property="og:site_name" content="Vinit Sheth's Website">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/article/Flappy-Bird-AI/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Vinit Sheth's Website Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://localhost:4000/images/apple-icon-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000">Vinit Sheth's Website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="http://localhost:4000/cv/" >Curriculum</a></li>
+		        
+				<li><a href="http://localhost:4000/projects/" >Projects</a></li>
+		        
+				<li><a href="http://localhost:4000/courses/" >Courses</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+  </div>
+  <article>
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/article/Flappy-Bird-AI/" rel="bookmark" title="Deep Q-Learning in Flappy Bird Game">Deep Q-Learning in Flappy Bird Game</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="preface">Preface</h3>
+
+<p>Although I am a beginner to Deep Reinforcement Learning, I have a strong feeling that many details in one learning program on a certain task could be applied to another learning program on a different task. These details include the implementation of algorithms, the tuning of the parameters, the construction of input data, and the way of optimization, under different circumstances of the problems. Therefore, I think it is necessary to keep these intuitions and “discoveries” somewhere, because human brain tends to forget things and becomes confused if things are overwelming.</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Deep Q-Learning has been widely used to play video games. I firstly noticed this application in some blogs, including <a href="https://yanpanlau.github.io/2016/07/10/FlappyBird-Keras.html">Ben Lau’s blog</a> and <a href="http://blog.csdn.net/songrotek/article/details/50580904">songrotek’s blog</a>. Although these two people were not the very first authors implementing Deep Q-Learning to the Flappy Bird game, they improved the implementation to some extent. Ben Lau employed Keras library to implement neural network, which makes code easy to understand. Songrotek, though did not use Keras library, wrapped the learning algorithm to class object, which makes it convenience to study other general Deep Q-Learning problems. After reading their blogs and codes, I became very interested in this application and wanted to implement Deep Q-Learning on this game by myself after learning sufficient theories from the Udacity Machine Learning Nanodegree courses. (Strictly speaking, my very first Deep Q-Learning project was the smartcab project from the Udacity Machine Learning Nanodegree courses. It might be a good project for beginners, however, it is a little bit problematic regarding the concept of Q-Learning, and of hardly any realistic usages.) The overall implementation of Deep Q-Learning on the Flappy Bird game was following the two blogers’ implementations I mentioned above. However, I combined both of their advantages and wrote a Deep Q-Learning algorithm that uses Keras library and was wrapped in class object. In addition to this, I also used some tricks in my own implementation to accelerate the training.</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-04-26-Flappy-Bird-AI/fb.jpg" alt="" /></p>
+
+<h3 id="setting-up-deep-q-learning-algorithm">Setting Up Deep Q-Learning Algorithm</h3>
+
+<h4 id="touch-the-algorithm">Touch the Algorithm</h4>
+
+<p>The <a href="https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf">NIPS 2013 Deep Q-Learning algorithm</a> was implemented.</p>
+
+<p><img src="http://localhost:4000/images/articles/2017-04-26-Flappy-Bird-AI/NIPS_2013.png" alt="" /></p>
+
+<h4 id="input-image">Input Image</h4>
+
+<p>The raw screenshot of the game requires to be preprocessed before send as input to the learning algorithm. The size of image matters a lot for the training efficiency and performance. Ben Lau and songrotek used 80 x 80 images as input. However, this did not retain the original height/width ratio of the raw image. So I changed it to 72 x 40, which matches the original height/width ratio. This might also reduce the calculation task to the computer to some extent.</p>
+
+<p><br /></p>
+
+<p>The Flappy Bird game API used black background, which makes us convenient to manipulate image using OpenCV to maximize the contrast between bird, background, and the barriers. It might be a good habit to always check the preprocessed image using your bare eye. If your bare eye cannot distinguish things from the preprocessed images, the chance that the computer would do a good job on it might be low.</p>
+
+<p><br /></p>
+
+<p>Game state frame determines how many frames of images are stacked together. Here, game_state_frame = 4. This means that 3 processing images and the current images are stacked into one single image, and are sent as input to the learning algorithm. Because in many games, the optimal actions to take is not only dependent on the current image. One may consider stacking of proceeding images together with the current image as a short video. The human and computer are using video, not single frame image, to determine the optimal actions.</p>
+
+<h4 id="tuning-of-hyperparameters">Tuning of Hyperparameters</h4>
+
+<p>Learning rate is always important for the learning tasks. To tune the learning rate, I usually print the loss and Q-values on the screen during the training. If the learning rate is too high, the loss and Q-values will blow up in a short period of time.</p>
+
+<h4 id="convolutional-neural-network-cnn">Convolutional Neural Network (CNN)</h4>
+
+<p>Because I only have a desktop with Intel i7-6700 CPU and no graphic cards, I decided to use smaller CNN in the algorithm. It turned out that a smaller CNN worked very well for this game (probably because the game is simple). There is no need to use larger CNN unless you have sufficient computation resources.</p>
+
+<h3 id="improvement-of-training">Improvement of Training</h3>
+
+<p>One of the key aspect of implementing Q-Learning is that the learning algorithm should learning different states as many as possible during the exploration stage. However, when I firstly started training, I found the bird always goes up and hit the barrier, which leads to a extremely poor training of algorithm. This is because the action the bird takes during the exploration stage is uniformly random between “flap” and “idle”. Once the bird “flaps”, it flies highier. The bird takes action at each frame, so it is almost garanteed the bird will goes up to the highest position and hit the barrier. To overcome this problem, I firstly tried to set the actions_per_frame from 1 to 3. This significantly increases the variety of bird flying during the exploration stage. However, the shortcoming of doing this is that the bird action frequence was limited. The bird might not be able to make actions in a state where it has to do something. Then I came up with another idea. I changed the uniform distribution between “flap” and “idle” making them uneven. I set the “flap” probability to 0.2 and the “idle” probability to 0.8, and it completely solves the problem. I am not sure if Ben Lau and songrotek has met such problems and if such problems could be overcomed by training with extremely long time. (It might be true because Ben Lau mentioned in his blog that he had to train millions of frames before the bird could actually fly well)</p>
+
+<h3 id="algorithm-performance">Algorithm Performance</h3>
+
+<p><img src="http://localhost:4000/images/articles/2017-04-26-Flappy-Bird-AI/flappy_bird_AI.gif" alt="" /></p>
+
+<p><br /></p>
+
+<p>The whole training took roughly 600,000 game frames in 36 hours, and the trained bird would never hit the barriers. It should also be noted that after training with 300,000 game frames, the bird started to fly reasonably, passing 0 to 100 barries in one single trial.</p>
+
+<h3 id="links-to-github">Links to GitHub</h3>
+
+<p><a href="https://github.com/leimao/Flappy_Bird_AI">https://github.com/leimao/Flappy_Bird_AI</a></p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+        </div>
+       <!-- <p class="byline"><strong>Deep Q-Learning in Flappy Bird Game</strong> was published on <time datetime="2017-04-26T00:00:00-07:00">April 26, 2017</time> and last modified on <time datetime="2017-04-26">April 26, 2017</time> by <a href="http://localhost:4000" title="About Vinit Sheth">Vinit Sheth</a>.</p> -->
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    <span>&copy; 2019 Vinit Sheth. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<!-- Old
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-133931159-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+<!-- New -->
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133931159-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vinitsheth-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

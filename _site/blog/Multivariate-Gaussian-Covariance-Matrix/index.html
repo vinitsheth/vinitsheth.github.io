@@ -1,0 +1,425 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+	    .article-wrap img{border-radius: 5px;}
+		.titled-image figure{text-align: center;}
+	</style>
+	<meta charset="utf-8">
+<title>Vinit Sheth's Website  &#8211; Multivariate Gaussian and Covariance Matrix </title>
+<meta name="description" content="">
+<meta name="keywords" content="Probability, Linear Algebra">
+
+
+
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multivariate Gaussian and Covariance Matrix">
+<meta property="og:description" content="Welcome to my site.">
+<meta property="og:url" content="http://localhost:4000/blog/Multivariate-Gaussian-Covariance-Matrix/">
+<meta property="og:site_name" content="Vinit Sheth's Website">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Multivariate-Gaussian-Covariance-Matrix/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Vinit Sheth's Website Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://localhost:4000/images/apple-icon-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000">Vinit Sheth's Website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="http://localhost:4000/cv/" >Curriculum</a></li>
+		        
+				<li><a href="http://localhost:4000/projects/" >Projects</a></li>
+		        
+				<li><a href="http://localhost:4000/courses/" >Courses</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+  </div>
+  <article>
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/blog/Multivariate-Gaussian-Covariance-Matrix/" rel="bookmark" title="Multivariate Gaussian and Covariance Matrix">Multivariate Gaussian and Covariance Matrix</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="introduction">Introduction</h3>
+
+<p>In ordinary probability theory courses, the course instructor would usually not emphasize the concepts and properties of the multivariate Gaussian distribution. However, multivariate Gaussian distribution is actually quite widely used in many different models. So here we are going to fill some holes in the probability theory we learned.</p>
+
+<h3 id="multivariate-gaussian-distribution">Multivariate Gaussian Distribution</h3>
+
+<p>If a random vector variable $x$ follows a multivariate Gaussian distribution with mean $\mu$ and covariance matrix $\Sigma$, its probability density function (pdf) is given by:</p>
+
+<script type="math/tex; mode=display">p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2} |\Sigma|^{1/2}} \exp{(-\frac{1}{2}(x-\mu)^T \Sigma^{-1} (x-\mu))}</script>
+
+<p>We write this as $x \sim \mathcal{N}(\mu, \Sigma)$.</p>
+
+<p><br /></p>
+
+<p>To understand the multivariate Gaussian distribution properly, we need to first understand the covariance matrix.</p>
+
+<h3 id="covariance-matrix">Covariance Matrix</h3>
+
+<p>Covariance is actually the critical part in multivariate Gaussian distribution. We will first look at some of the properties of the covariance matrix and try to proof them.</p>
+
+<p>The two major properties of the covariance matrix are:</p>
+
+<ul>
+  <li>Covariance matrix is positive semi-definite.</li>
+  <li>Covariance matrix in multivariate Gaussian distribution is positive definite.</li>
+</ul>
+
+<p>A symmetric matrix $M$ is said to be positive semi-definite if $y^TMy$ is always non-negative for any vector $y$.</p>
+
+<p><br /></p>
+
+<p>Similarly, a symmetric matrix $M$ is said to be positive definite if $y^TMy$ is always positive for any non-zero vector $y$.</p>
+
+<h4 id="covariance-matrix-is-positive-semi-definite">Covariance matrix is positive semi-definite</h4>
+
+<p>We will first see covariance matrix is positive semi-definite.</p>
+
+<p><br /></p>
+
+<p>By definition, given a random vector $x$, the covariance matrix is:</p>
+
+<script type="math/tex; mode=display">\Sigma = E[(x-\mu)(x-\mu)^T]</script>
+
+<p>For any vector $v$, we have:</p>
+
+<script type="math/tex; mode=display">v^T \Sigma v = v^T E[(x-\mu)(x-\mu)^T] v = E[((x-\mu)^T v)^T ((x-\mu)^T v)] = E[((x-\mu)^T v)^2] \geq 0</script>
+
+<p>Therefore, covariance matrix is positive semi-definite.</p>
+
+<h4 id="covariance-matrix-in-multivariate-gaussian-distribution-is-positive-definite">Covariance matrix in multivariate Gaussian distribution is positive definite</h4>
+
+<p>Now we need to see why the covariance matrix in multivariate Gaussian distribution is positive definite.</p>
+
+<p><br /></p>
+
+<p>Notice from the pdf of the multivariate Gaussian distribution that the covariance matrix $\Sigma$ must be invertible, otherwise the pdf does not exist.</p>
+
+<p><br /></p>
+
+<p>Because $\Sigma$ is intertible, it must be full rank, and linear system $\Sigma x = 0$ only has single solution $x = 0$.</p>
+
+<p><br /></p>
+
+<p>From lemma 2, because $\Sigma$ is symmetric, we know that $\Sigma$ could be decomposed as $\Sigma = B^T B$.</p>
+
+<p><br /></p>
+
+<p>Therefore, for any non-zero vector $y$, $y^T \Sigma y = 0$ if and only if $By = 0$. Because $y^T \Sigma y = y^T B^T B y = (By)^T (By)$. If $By = 0$, $\Sigma y = B^T By = 0$. Because $\Sigma$ is full rank, and $y \neq 0$, there is no solution for linear system $y^T \Sigma y = 0$. Therefore, $y^T \Sigma y &gt; 0$ and $\Sigma$ is positive definite.</p>
+
+<h4 id="significance">Significance</h4>
+
+<p>From lemma 3, we know that $\Sigma^{-1}$ is also positive definite.</p>
+
+<p><br /></p>
+
+<p>We have proved all the way to show that $\Sigma^{-1}$ is positive definite, why would we need to know this?</p>
+
+<p><br /></p>
+
+<p>In the pdf of multivariate Gaussian, $(x-\mu)^T \Sigma^{-1} (x-\mu)$ is always greater than 0, and $\exp{(-\frac{1}{2}(x-\mu)^T \Sigma^{-1} (x-\mu))}$ is always less than 1.</p>
+
+<h3 id="multivariate-gaussian-distribution-properties">Multivariate Gaussian Distribution Properties</h3>
+
+<p>We now could move to learn some Gaussian distribution properties.</p>
+
+<h4 id="gaussian-properties">Gaussian Properties</h4>
+
+<ol>
+  <li>The sum of independent Gaussian random variables is Gaussian.</li>
+  <li>The marginal of a joint Gaussian distribution is Gaussian.</li>
+  <li>The conditional of a joint Gaussian distribution is Gaussian.</li>
+</ol>
+
+<p>The proof of these properties are rather complicated. The reference to these proofs are provided in the reference 2.</p>
+
+<h4 id="example-facts">Example Facts</h4>
+
+<p>Suppose the real, scalar random variables $X$, $Y$, and $Z$ are jointly Gaussian. We could infer that:</p>
+
+<ol>
+  <li>$X$, $Y$, and $Z$ independently are Gaussians because of the Gaussian property 2.</li>
+  <li>$2X+Y-Z$ is Gaussian because of the Gaussian property 1 and example fact 1.</li>
+  <li>$X|Y$ is Gaussian because of the Gaussian property 3.</li>
+  <li>$X|Y,Z$ is Gaussian.</li>
+</ol>
+
+<p>Example fact 4 might not be obvious. Here we could show using the Gaussian property 3 and conditional probability theorem without formal proof.</p>
+
+<p><br /></p>
+
+<p>Because $p(X|Y,Z) = p(X|Y) \times p(Y|Z)$, $p(X|Y)$ and $p(Y|Z)$ are the pdf of Gaussian distribution we know from the Gaussian property 3. The product of two Gaussian pdf is a pdf of a new Gaussian (<a href="https://ccrma.stanford.edu/~jos/sasp/Product_Two_Gaussian_PDFs.html">Demo</a> and <a href="http://www.tina-vision.net/docs/memos/2003-003.pdf">formal proof</a>).</p>
+
+<h3 id="lemmas">Lemmas</h3>
+
+<p>These are the lemmas that I proved to support part of the statements in this blog post.</p>
+
+<h4 id="lemma-1">Lemma 1</h4>
+
+<p><strong>A symmetric matrix is positive definite if and only if its eigenvalues are all positive.</strong></p>
+
+<p><br /></p>
+
+<p>Proof:</p>
+
+<p><br /></p>
+
+<p>Any square symmetric matrix $M$ could be eigendecomposed (<a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix#Real_symmetric_matrices">Wikipedia</a>). $M = P^{-1}DP = P^TDP$ (For symmetric matrix, $P$ is orthonormal, $P^{-1} = P^T$) where $D$ is the diagnal eigenvalue matrix. $y^TMy = y^TP^TDPy = (Py)^TD(Py)$. Because $D$ is diagnal, $(Py)^T(Py)$ is non-negative, therefore, $M$ is positive definite if and only if all the diagnal elements, i.e., the eigenvalues of $M$, are positive.</p>
+
+<h4 id="lemma-2">Lemma 2</h4>
+
+<p><strong>A symmetric matrix $A$ could be decomposed as $A = B^T B$ where $B$ is also a square matrix</strong></p>
+
+<p><br /></p>
+
+<p>Proof:</p>
+
+<p><br /></p>
+
+<p>$A = P^TDP = P^T (D^{1/2})^T D^{1/2} P = (D^{1/2} P)^T (D^{1/2} P) = B^T B$, where $B = D^{1/2} P$</p>
+
+<h4 id="lemma-3">Lemma 3</h4>
+
+<p><strong>If matrix $K$ is positive definite, then $K^{-1}$ is also positive definite.</strong></p>
+
+<p><br /></p>
+
+<p>Proof:</p>
+
+<p><br /></p>
+
+<p>From lemma 1, we know that if $K$ is positive definite, all the eigenvalues of $K$ is positive. Therefore, the determinant of $K$ is positive, and $K$ must be invertible.</p>
+
+<p><br /></p>
+
+<p>For any vector non-zero $y$, we could always express $y$ as $y = Kx$ because $K$ is invertible. Given $K$ is positive definite and $v^T K v &gt; 0$ for any non-zero vector $v$.</p>
+
+<p><br /></p>
+
+<p>Then we have:</p>
+
+<script type="math/tex; mode=display">y^T K^{-1} y = (Kx)^T K^{-1} Kx = x^T K^T (K^{-1} K) x = x^T K^T x = (x^T K x)^T > 0</script>
+
+<p>Therefore, $K^{-1}$ is also positive definite.</p>
+
+<h3 id="references">References</h3>
+
+<p>The references below provide a lot of useful properties and facts without showing some of the detailed self-contained subtle proofs I provided above.</p>
+
+<p><br /></p>
+
+<p>[1] <a href="/downloads/blog/2018-03-30-Multivariate-Gaussian-Covariance-Matrix/multivariate_gaussian_stanford.pdf">The Multivariate Gaussian Distribution</a></p>
+
+<p>[2] <a href="/downloads/blog/2018-03-30-Multivariate-Gaussian-Covariance-Matrix/multivariate_gaussian_more_stanford.pdf">More on Multivariate Gaussians</a></p>
+
+<p>[3] <a href="/downloads/blog/2018-03-30-Multivariate-Gaussian-Covariance-Matrix/product_of_gaussian_pdf.pdf">Products and Convolutions of Gaussian Probability Density Functions</a></p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+        </div>
+       <!-- <p class="byline"><strong>Multivariate Gaussian and Covariance Matrix</strong> was published on <time datetime="2018-03-30T00:00:00-07:00">March 30, 2018</time> and last modified on <time datetime="2018-03-30">March 30, 2018</time> by <a href="http://localhost:4000" title="About Vinit Sheth">Vinit Sheth</a>.</p> -->
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    <span>&copy; 2019 Vinit Sheth. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<!-- Old
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-133931159-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+<!-- New -->
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133931159-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vinitsheth-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

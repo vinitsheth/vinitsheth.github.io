@@ -1,0 +1,615 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+	    .article-wrap img{border-radius: 5px;}
+		.titled-image figure{text-align: center;}
+	</style>
+	<meta charset="utf-8">
+<title>Vinit Sheth's Website  &#8211; Guide to TensorFlow Dataset API </title>
+<meta name="description" content="">
+<meta name="keywords" content="TensorFlow">
+
+
+
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guide to TensorFlow Dataset API">
+<meta property="og:description" content="Welcome to my site.">
+<meta property="og:url" content="http://localhost:4000/blog/TensorFlow-Dataset-API/">
+<meta property="og:site_name" content="Vinit Sheth's Website">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/TensorFlow-Dataset-API/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Vinit Sheth's Website Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://localhost:4000/images/apple-icon-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000">Vinit Sheth's Website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="http://localhost:4000/cv/" >Curriculum</a></li>
+		        
+				<li><a href="http://localhost:4000/projects/" >Projects</a></li>
+		        
+				<li><a href="http://localhost:4000/courses/" >Courses</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+  </div>
+  <article>
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/blog/TensorFlow-Dataset-API/" rel="bookmark" title="Guide to TensorFlow Dataset API">Guide to TensorFlow Dataset API</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="introduction">Introduction</h3>
+
+<p>I have been using TensorFlow since its first release (version 0.1) in 2015. So some of my coding habits for the earlier versions have been kept until now. One of the habits is that I always use <code class="highlighter-rouge">placeholder</code> and <code class="highlighter-rouge">feed_dict</code> to feed data, including training data, validation data, and test data, into TensorFlow graph for computation. <code class="highlighter-rouge">placeholder</code> and <code class="highlighter-rouge">feed_dict</code> make your program super flexible. When you have newly collected data, feeding data using <code class="highlighter-rouge">feed_dict</code> will never damage the pre-built TensorFlow graph. When you want to change the dropout rate to 0 during test time, or adjust learning rate during training time, <code class="highlighter-rouge">feed_dict</code> is always the best choice to make your program flexible.</p>
+
+<p><br /></p>
+
+<p>Because the datasets of some of my research projects become larger, I started to be concerned about the data loading and preprocessing efficiencies, as it may become the “bottleneck” of training process if not being handled properly. For large datasets, it is not feasible to read all the data into memory and load the data to the program from memory (You may do it on your supercomputer, but others will probably not be able to run your program on their own desktops). So what people usually do is to read data from disk and do all the data preprocessing on the fly. So to make this portion of code looking neat, I have written <code class="highlighter-rouge">Dataset</code> and <code class="highlighter-rouge">Iterator</code> classes for some of my projects. However, they are not generalizable, meaning that if you want to use the <code class="highlighter-rouge">Dataset</code> and <code class="highlighter-rouge">Iterator</code> from one project for another project, it usually has to be modified significantly. In addition, my <code class="highlighter-rouge">Dataset</code> and <code class="highlighter-rouge">Iterator</code> was not written in multi-thread fashion, making me concerned about the loading and preprocessing efficiencies.</p>
+
+<p><br /></p>
+
+<p>As TensorFlow updates, I started to be aware that there are official <code class="highlighter-rouge">Dataset</code> and <code class="highlighter-rouge">Iterator</code> classes in TensorFlow, which allows users to make use of their internal optimization for loading and preprocessing data. According to the <a href="https://www.tensorflow.org/performance/datasets_performance">TensorFlow</a> official documentation, using their <code class="highlighter-rouge">Iterator</code> should be asymptotically faster than an ordinary single-thread <code class="highlighter-rouge">Iterator</code>. However, in my preliminary tests, I found the TensorFlow <code class="highlighter-rouge">Iterator</code> was significanly slower than a manual single-thread <code class="highlighter-rouge">Iterator</code> in some cases, probably due to its heavy overhead running time.</p>
+
+<h3 id="tensorflow-dataset-api-usages">TensorFlow Dataset API Usages</h3>
+
+<p>Frankly, I think it is not easy to learn the TensorFlow Dataset APIs, because there are many different ways to use the APIs and those ways have slightly different effects, which means that they have to be used for different purposes. The official <a href="https://www.tensorflow.org/guide/datasets">guide</a> provided some toy examples of how to use TensorFlow Dataset APIs in different ways. But it is really hard for users to understand why they have to code in that way for each step, not even mention how to choose appropriate ways to code for different purposes.</p>
+
+<p><br /></p>
+
+<p>For most of the ways of using TensorFlow Dataset APIs, they will work well for most of your research projects because usually the dataset of your research project is fixed. You can create <code class="highlighter-rouge">Dataset</code> and <code class="highlighter-rouge">Iterator</code> instances for your fixed training, validation, and test dataset independently. Your TensorFlow program does not have to be written in a fashion that allows new data neither. However, in practice, we always trained our model for testing new data, and our TensorFlow program has to allow new data streams if it is going to be a real application. In this case, we need to carefully design our program to allow the new data stream using TensorFlow official <code class="highlighter-rouge">Iterator</code>.</p>
+
+<p><br /></p>
+
+<p>The toy dataset on TensorFlow official <a href="https://www.tensorflow.org/guide/datasets">guide</a> for TensorFlow Dataset API usages is trivial. Here I will use MNIST dataset as a concrete example. TensorFlow <code class="highlighter-rouge">Dataset</code> and <code class="highlighter-rouge">Iterator</code> instances are the two compulsary components of the API.</p>
+
+<h4 id="dataset-instance">Dataset Instance</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Preprocessor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span> <span class="o">=</span> <span class="n">num_classes</span>
+
+    <span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+        <span class="s">'''
+        Data preprocess procedures
+        images: tensor format, dtype = tf.uint8
+        labels: tensor format, dtype = tf.uint8
+        '''</span>
+        <span class="c"># Change dtype from uint to float</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="c"># Scale images</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="n">images</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="c"># One-hot encoding</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">indices</span> <span class="o">=</span> <span class="n">labels</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span><span class="p">)</span>
+        <span class="c"># Change dtype from uint to float</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span>
+
+<span class="k">def</span> <span class="nf">dataset_generation</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">buffer_size</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">repeat</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="bp">False</span><span class="p">):</span>
+    <span class="s">'''
+    Generate tensorflow dataset object
+    images: numpy array format
+    labels: numpy array format
+    '''</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span><span class="n">images</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="nb">map</span><span class="p">(</span><span class="n">preprocess</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">repeat</span><span class="p">:</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">repeat</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">shuffle</span><span class="p">:</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">buffer_size</span> <span class="o">=</span> <span class="n">buffer_size</span><span class="p">)</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">dataset</span>
+
+<span class="c"># Create TensorFlow dataset preprocessing unit</span>
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">Preprocessor</span><span class="p">(</span><span class="n">num_classes</span> <span class="o">=</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="c"># Create TensorFlow Dataset instance</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">dataset_generation</span><span class="p">(</span><span class="n">images</span> <span class="o">=</span> <span class="n">train_images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">preprocess</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">preprocess</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">repeat</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset_generation</span><span class="p">(</span><span class="n">images</span> <span class="o">=</span> <span class="n">test_images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">test_labels</span><span class="p">,</span> <span class="n">preprocess</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">preprocess</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">repeat</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To generate TensorFlow <code class="highlighter-rouge">Dataset</code> instance, usually four things have to be set.</p>
+
+<p><strong>Iterable Numpy Array Format Dataset</strong></p>
+
+<p>For small dataset, it could be just the numpy array of the whole dataset. For large dataset, it could be the filenames or filepath of the data stored in the hard drive.</p>
+
+<p><strong>Data Preprocess</strong></p>
+
+<p>The dataset preprocessing was done using <code class="highlighter-rouge">map</code>. This is where the preprocessing and loading efficiencies happen, since the <code class="highlighter-rouge">map</code> function allows the procedures to run in parallel.</p>
+
+<p><strong>Shuffle</strong></p>
+
+<p>Usually we could just shuffle the dataset beforehand without using the built-in shuffle function. If you use shuffle for dataset, it will shuffle the dataset every time you start a new <code class="highlighter-rouge">Iterator</code> instance and it is usually slow in practice.</p>
+
+<p><strong>Batch Size</strong></p>
+
+<p>Designate the batch size for your dataset.</p>
+
+<h4 id="iterator-instance">Iterator Instance</h4>
+
+<p>According to the official TensorFlow <a href="https://www.tensorflow.org/guide/datasets">guide</a>, there are four types of <code class="highlighter-rouge">Iterator</code>: one-shot, initializable, reinitializable, and feedable. Personally I think reinitializable and feedable <code class="highlighter-rouge">Iterator</code>s are the most useful in practice. I also integrate the <code class="highlighter-rouge">Iterator</code> instances into training class because I usually prefer to write TensorFlow code in a object-oriented fashion.</p>
+
+<p>A typical object-oriented TensorFlow code with the official TensorFlow <code class="highlighter-rouge">Iterator</code> reinitializable instance looks like this.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CNN</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset_output_types</span><span class="p">,</span> <span class="n">dataset_output_shapes</span><span class="p">,</span> <span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">dropout</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span> <span class="o">=</span> <span class="n">num_classes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">dropout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">learning_rate</span>
+
+        <span class="c"># TensorFlow Iterator instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iterator</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Iterator</span><span class="o">.</span><span class="n">from_structure</span><span class="p">(</span><span class="n">output_types</span> <span class="o">=</span> <span class="n">dataset_output_types</span><span class="p">,</span> <span class="n">output_shapes</span> <span class="o">=</span> <span class="n">dataset_output_shapes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterator</span><span class="o">.</span><span class="n">get_next</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_initializer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_initializer</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">model_initializer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputs_train</span> <span class="o">=</span> <span class="n">conv_net</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">,</span> <span class="n">num_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">dropout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">,</span> <span class="n">reuse</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">is_training</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outputs_test</span> <span class="o">=</span> <span class="n">conv_net</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">,</span> <span class="n">num_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">dropout</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">reuse</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">is_training</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+
+        <span class="n">correct_pred</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outputs_test</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">correct_pred</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">optimizer_initializer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entropy_with_logits_v2</span><span class="p">(</span><span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs_train</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_dataset</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">):</span>
+
+        <span class="n">train_init_operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterator</span><span class="o">.</span><span class="n">make_initializer</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">train_init_operator</span><span class="p">)</span>
+
+        <span class="n">train_accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">train_accuracy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">accuracy</span><span class="p">])</span>
+            <span class="n">train_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_accuracy</span><span class="p">)</span>
+
+        <span class="n">train_accuracy_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_accuracies</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">train_accuracy_mean</span>
+
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_dataset</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">):</span>
+
+        <span class="n">test_init_operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterator</span><span class="o">.</span><span class="n">make_initializer</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test_init_operator</span><span class="p">)</span>
+
+        <span class="n">test_accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">):</span>
+            <span class="n">test_accuracy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accuracy</span><span class="p">)</span>
+            <span class="n">test_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_accuracy</span><span class="p">)</span>
+
+        <span class="n">test_accuracy_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">test_accuracies</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">test_accuracy_mean</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">saver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>We use <code class="highlighter-rouge">tf.data.Iterator</code> to create <code class="highlighter-rouge">Iterator</code> instance, and <code class="highlighter-rouge">iterator.get_next()</code> as the inputs for the TensorFlow graph. Each time we want to switch dataset, we have to reinitialize the <code class="highlighter-rouge">Iterator</code> using the following way.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_init_operator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterator</span><span class="o">.</span><span class="n">make_initializer</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">train_init_operator</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Therefore, even if there is new data stream coming, we just have to create a <code class="highlighter-rouge">Dataset</code> instance outside the main TensorFlow graph, and pass the <code class="highlighter-rouge">Dataset</code> instance into the main TensorFlow graph for <code class="highlighter-rouge">Iterator</code> initialization.</p>
+
+<h3 id="tensorflow-dataset-api-drawbacks">TensorFlow Dataset API Drawbacks</h3>
+
+<p>I tested training MNIST digit classifier on a NVIDIA TitanX GPU using Numpy format MNIST dataset with manual single-thread data loadinig and preprocessing instance, TensorFlow reinitializable <code class="highlighter-rouge">Iterator</code> instance, and TensorFlow feedable <code class="highlighter-rouge">Iterator</code> instance. I found TensorFlow reinitializable <code class="highlighter-rouge">Iterator</code> and TensorFlow feedable <code class="highlighter-rouge">Iterator</code> are comparable, but they are not significantly faster than manual single-thread data loadinig and preprocessing instance.</p>
+
+<h4 id="manual-instance">Manual Instance</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch: 000 | Train Accuracy: 0.51 | Test Accuracy: 0.70
+Epoch: 001 | Train Accuracy: 0.87 | Test Accuracy: 0.82
+Epoch: 002 | Train Accuracy: 0.91 | Test Accuracy: 0.88
+Epoch: 003 | Train Accuracy: 0.94 | Test Accuracy: 0.89
+Epoch: 004 | Train Accuracy: 0.97 | Test Accuracy: 0.91
+Epoch: 005 | Train Accuracy: 0.99 | Test Accuracy: 0.91
+Epoch: 006 | Train Accuracy: 1.00 | Test Accuracy: 0.90
+Epoch: 007 | Train Accuracy: 1.00 | Test Accuracy: 0.90
+Epoch: 008 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 009 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 010 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 011 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 012 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 013 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 014 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 015 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 016 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 017 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 018 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 019 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Time Elapsed: 00:00:05
+</code></pre></div></div>
+
+<h4 id="tensorflow-reinitializable-iterator-instance">TensorFlow Reinitializable Iterator Instance</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch: 000 | Train Accuracy: 0.49 | Test Accuracy: 0.62
+Epoch: 001 | Train Accuracy: 0.88 | Test Accuracy: 0.83
+Epoch: 002 | Train Accuracy: 0.94 | Test Accuracy: 0.86
+Epoch: 003 | Train Accuracy: 0.95 | Test Accuracy: 0.93
+Epoch: 004 | Train Accuracy: 0.99 | Test Accuracy: 0.89
+Epoch: 005 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 006 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 007 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 008 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 009 | Train Accuracy: 1.00 | Test Accuracy: 0.90
+Epoch: 010 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 011 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 012 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 013 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 014 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 015 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 016 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 017 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 018 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 019 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Time Elapsed: 00:00:05
+</code></pre></div></div>
+
+<h4 id="tensorflow-feedable-iterator-instance">TensorFlow Feedable Iterator Instance</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch: 000 | Train Accuracy: 0.49 | Test Accuracy: 0.70
+Epoch: 001 | Train Accuracy: 0.87 | Test Accuracy: 0.80
+Epoch: 002 | Train Accuracy: 0.92 | Test Accuracy: 0.85
+Epoch: 003 | Train Accuracy: 0.95 | Test Accuracy: 0.90
+Epoch: 004 | Train Accuracy: 0.97 | Test Accuracy: 0.89
+Epoch: 005 | Train Accuracy: 0.99 | Test Accuracy: 0.89
+Epoch: 006 | Train Accuracy: 0.99 | Test Accuracy: 0.91
+Epoch: 007 | Train Accuracy: 1.00 | Test Accuracy: 0.88
+Epoch: 008 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 009 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 010 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 011 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 012 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 013 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 014 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 015 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 016 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 017 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 018 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Epoch: 019 | Train Accuracy: 1.00 | Test Accuracy: 0.92
+Time Elapsed: 00:00:05
+</code></pre></div></div>
+
+<p>I later tried to increase the complexity of preprocessing function but found there is only very slight improvement.</p>
+
+<p><br /></p>
+
+<p>Because for some datasets, we would not load the whole dataset into memory as a Numpy array but read batches from hard drive using their filepaths. I tested loading MNIST dataset from hard drive during training. The test result is surprising, the TensorFlow <code class="highlighter-rouge">Iterator</code> intances are actually much slower than single-thread manual data loading.</p>
+
+<h4 id="manual-instance-1">Manual Instance</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch: 000 | Train Accuracy: 0.40 | Test Accuracy: 0.65
+Epoch: 001 | Train Accuracy: 0.77 | Test Accuracy: 0.82
+Epoch: 002 | Train Accuracy: 0.90 | Test Accuracy: 0.91
+Epoch: 003 | Train Accuracy: 0.94 | Test Accuracy: 0.91
+Epoch: 004 | Train Accuracy: 0.96 | Test Accuracy: 0.95
+Epoch: 005 | Train Accuracy: 1.00 | Test Accuracy: 0.95
+Epoch: 006 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 007 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 008 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 009 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 010 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 011 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 012 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 013 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 014 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 015 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 016 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 017 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 018 | Train Accuracy: 1.00 | Test Accuracy: 0.95
+Epoch: 019 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Time Elapsed: 00:00:05
+</code></pre></div></div>
+
+<h4 id="tensorflow-reinitializable-iterator-instance-1">TensorFlow Reinitializable Iterator Instance</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch: 000 | Train Accuracy: 0.42 | Test Accuracy: 0.68
+Epoch: 001 | Train Accuracy: 0.78 | Test Accuracy: 0.79
+Epoch: 002 | Train Accuracy: 0.89 | Test Accuracy: 0.90
+Epoch: 003 | Train Accuracy: 0.93 | Test Accuracy: 0.89
+Epoch: 004 | Train Accuracy: 0.98 | Test Accuracy: 0.94
+Epoch: 005 | Train Accuracy: 0.98 | Test Accuracy: 0.92
+Epoch: 006 | Train Accuracy: 0.99 | Test Accuracy: 0.94
+Epoch: 007 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 008 | Train Accuracy: 0.99 | Test Accuracy: 0.92
+Epoch: 009 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 010 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 011 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 012 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 013 | Train Accuracy: 1.00 | Test Accuracy: 0.91
+Epoch: 014 | Train Accuracy: 1.00 | Test Accuracy: 0.95
+Epoch: 015 | Train Accuracy: 1.00 | Test Accuracy: 0.95
+Epoch: 016 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 017 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 018 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 019 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Time Elapsed: 00:00:12
+</code></pre></div></div>
+
+<h4 id="tensorflow-feedable-iterator-instance-1">TensorFlow Feedable Iterator Instance</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch: 000 | Train Accuracy: 0.38 | Test Accuracy: 0.62
+Epoch: 001 | Train Accuracy: 0.78 | Test Accuracy: 0.77
+Epoch: 002 | Train Accuracy: 0.88 | Test Accuracy: 0.91
+Epoch: 003 | Train Accuracy: 0.92 | Test Accuracy: 0.91
+Epoch: 004 | Train Accuracy: 0.97 | Test Accuracy: 0.93
+Epoch: 005 | Train Accuracy: 0.99 | Test Accuracy: 0.93
+Epoch: 006 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 007 | Train Accuracy: 0.98 | Test Accuracy: 0.93
+Epoch: 008 | Train Accuracy: 0.98 | Test Accuracy: 0.92
+Epoch: 009 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 010 | Train Accuracy: 0.99 | Test Accuracy: 0.93
+Epoch: 011 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 012 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 013 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 014 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 015 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 016 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 017 | Train Accuracy: 1.00 | Test Accuracy: 0.93
+Epoch: 018 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Epoch: 019 | Train Accuracy: 1.00 | Test Accuracy: 0.94
+Time Elapsed: 00:00:12
+</code></pre></div></div>
+
+<h3 id="conclusions">Conclusions</h3>
+
+<p>Using TensorFlow <code class="highlighter-rouge">Iterator</code> is not necessary faster than the self-implemented single-thread <code class="highlighter-rouge">Iterator</code> because of its heavy overhead running time. Based on these test results, I would not favor TensorFlow <code class="highlighter-rouge">Iterator</code> over my self-implemented <code class="highlighter-rouge">Iterator</code> in my daily TensorFlow usages. Maybe I would keep using <code class="highlighter-rouge">feed_dict</code> frequently simply because it looks more natural.</p>
+
+<h3 id="final-remarks">Final Remarks</h3>
+
+<p>TensorFlow is evolving fast. It always tries to keep up with the state-of-art deep learning research, which other deep learning frameworks usually don’t. Keep yourself updated on TensorFlow is not easy, and of course there are many caveats when you are using the new features.</p>
+
+<h3 id="github">GitHub</h3>
+
+<p>All the testing TensorFlow codes have been open sourced on my <a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo">GitHub</a>.</p>
+
+<h4 id="numpy-format-mnist-dataset">Numpy Format MNIST Dataset</h4>
+
+<ul>
+  <li><a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo/blob/master/MNIST_Numpy/traditional.py">Manual Instance</a></li>
+  <li><a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo/blob/master/MNIST_Numpy/reinitializable.py">TensorFlow Reinitializable <code class="highlighter-rouge">Iterator</code> Instance</a></li>
+  <li><a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo/blob/master/MNIST_Numpy/feedable.py">TensorFlow Feedable <code class="highlighter-rouge">Iterator</code> Instance</a></li>
+</ul>
+
+<h4 id="png-format-mnist-dataset">PNG Format MNIST Dataset</h4>
+
+<ul>
+  <li><a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo/blob/master/MNIST_PNG/traditional.py">Manual Instance</a></li>
+  <li><a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo/blob/master/MNIST_PNG/reinitializable.py">TensorFlow Reinitializable <code class="highlighter-rouge">Iterator</code> Instance</a></li>
+  <li><a href="https://github.com/leimao/TensorFlow_Dataset_API_Demo/blob/master/MNIST_PNG/feedable.py">TensorFlow Feedable <code class="highlighter-rouge">Iterator</code> Instance</a></li>
+</ul>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+        </div>
+       <!-- <p class="byline"><strong>Guide to TensorFlow Dataset API</strong> was published on <time datetime="2018-08-11T00:00:00-07:00">August 11, 2018</time> and last modified on <time datetime="2018-08-11">August 11, 2018</time> by <a href="http://localhost:4000" title="About Vinit Sheth">Vinit Sheth</a>.</p> -->
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    <span>&copy; 2019 Vinit Sheth. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<!-- Old
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-133931159-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+<!-- New -->
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133931159-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vinitsheth-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

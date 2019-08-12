@@ -1,0 +1,368 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+	    .article-wrap img{border-radius: 5px;}
+		.titled-image figure{text-align: center;}
+	</style>
+	<meta charset="utf-8">
+<title>Vinit Sheth's Website  &#8211; Image Pyramids and Its Applications in Deep Learning </title>
+<meta name="description" content="">
+<meta name="keywords" content="Computer Vision, Deep Learning">
+
+
+
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Image Pyramids and Its Applications in Deep Learning">
+<meta property="og:description" content="Welcome to my site.">
+<meta property="og:url" content="http://localhost:4000/blog/Image-Pyramids-In-Deep-Learning/">
+<meta property="og:site_name" content="Vinit Sheth's Website">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Image-Pyramids-In-Deep-Learning/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Vinit Sheth's Website Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://localhost:4000/images/apple-icon-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000">Vinit Sheth's Website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="http://localhost:4000/cv/" >Curriculum</a></li>
+		        
+				<li><a href="http://localhost:4000/projects/" >Projects</a></li>
+		        
+				<li><a href="http://localhost:4000/courses/" >Courses</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+  </div>
+  <article>
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/blog/Image-Pyramids-In-Deep-Learning/" rel="bookmark" title="Image Pyramids and Its Applications in Deep Learning">Image Pyramids and Its Applications in Deep Learning</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="introduction">Introduction</h3>
+
+<p>Image pyramids were basically a series of images with different resolutions stacking together [1]. The original image was repeatedly downsampled to a low resolution image using kernels, scuh as Gaussian kernel and Laplacian kernel. These images stack together from high resolution images at the bottom and low resolution images at the top, forming a “pyramid”. Each image in the image pyramids is called an “octave”.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img0.png" alt="" /></td>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img1.png" alt="" /></td>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img2.png" alt="" /></td>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img3.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>One of the advantages of such image pyramids is that the object search could be faster using a coarse-to-fine strategy. For example, if you are looking for the hippo’s eye in the image using translational searching, you will have to go through the whole high resolution image. However, if you first try to look for the hippo’s eye in the low resolution image, determine its rough location, and do fine search in the corresponding location in the high resolution image, the number of translations you did would be significantly smaller than going through the high resolution image. While the search is much faster, the storage cost only increases by 1/3 at most if the dimension reduction is 1/2 at each dimension.</p>
+
+<p><br /></p>
+
+<p>In some situations, we also need to resize the low resolution images to the size of high resolution image. This is mainly used for <a href="https://docs.opencv.org/3.4.2/dc/dff/tutorial_py_pyramids.html">image blending</a>. <a href="https://github.com/leimao/DeepDream">Google DeepDream</a> also used image pyramids of equal image sizes to calculate the gradients for generating the patterns, probably for the smoothing purpose I guess (Honestly when I first implemented Google DeepDream I didn’t quite understand why they did this “complicated” step).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img0.png" alt="" /></td>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img1_resized.png" alt="" /></td>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img2_resized.png" alt="" /></td>
+      <td><img src="/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/img3_resized.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>CMU has a basic introduction to image pyramids, which could be downloaded <a href="/downloads/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/SamplingPyramids.pdf">here</a>.</p>
+
+<h3 id="image-pyramids-in-deep-learning">Image Pyramids in Deep Learning</h3>
+
+<p>The concept of image pyramids have also been employed in deep learning for feature extractions.</p>
+
+<h4 id="spatial-pyramid-pooling-spp">Spatial Pyramid Pooling (SPP)</h4>
+
+<p>Kaiming He et al. used the following pooling strategy resulting a fixed length feature vector, independent of the size of input tensor, in the neural network [2]. Baiscally given a tensor input, three max pooling was done in parallel, resulting 4 x 4, 2 x 2, and 1 x 1 tensors. The tensors were then linearized and concatenated into one vector (which may contain multiple channels). This vector contains rich spatial information that increases the computer vision task accuracy.</p>
+
+<div class="titled-image">
+<figure>
+    <img src="http://localhost:4000/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/spatial_pyramid_pooling.png" width="95%" />
+    <figcaption>Spatial Pyramid Pooling</figcaption>
+</figure>
+</div>
+
+<p>Obviously, the concept of this method is extremely close to image pyramids in the traditional computer vision.</p>
+
+<p><br /></p>
+
+<p>The implementation of such spatial pyramid pooling in TensorFlow could be found <a href="https://github.com/tensorflow/tensorflow/issues/6011">here</a>.</p>
+
+<h4 id="pyramid-pooling">Pyramid Pooling</h4>
+
+<p>One shotcoming of Kaiming He’s method is that the spatial pyramid pooling could only be used before a fully connected neural network because the sizes of outputs from parallel max poolings are different. You would not be able to use that method between convolutional layers.</p>
+
+<p><br /></p>
+
+<p>Hengshuang Zhao used a method similar to Google DeepDream’s method by resizing the pooled tensor to the original size by bilinear interpolation in PSPNet (I believe Google DeepDream algorithm came earlier than their publications). Therefore the outputs from parallel poolings could be stacked together.</p>
+
+<div class="titled-image">
+<figure>
+    <img src="http://localhost:4000/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/pyramid_pooling-module.png" width="95%" />
+    <figcaption>Pyramid Pooling</figcaption>
+</figure>
+</div>
+
+<p>Bilinear interpolation is differentiable. In TensorFlow, we could use either 
+<a href="https://www.tensorflow.org/api_docs/python/tf/image/resize_bilinear">tf.image.resize_bilinear</a> or <a href="https://www.tensorflow.org/api_docs/python/tf/image/resize_images">
+tf.image.resize_images</a> to do bilinear image upsampling.</p>
+
+<h4 id="atrous-spatial-pyramid-pooling-aspp">Atrous Spatial Pyramid Pooling (ASPP)</h4>
+
+<p>Liang-Chieh Chen used atrous convolution to do spatial pyramid pooling in their DeepLab series [4,5,6]. Atrous convolution is nothing special but an extension of oridinary convolution. In other words, ordinary convolution is a special case of atrous convolution. In atrous convolution, when rate = 1, it becomes ordinary convolution. I don’t know why people invented “atrous” for such convolution, but I used to call it <a href="https://github.com/vdumoulin/conv_arithmetic">dilated convolution</a>.</p>
+
+<div class="titled-image">
+<figure>
+    <img src="http://localhost:4000/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/atrous_convolution.png" width="95%" />
+    <figcaption>Atrous Convolution</figcaption>
+</figure>
+</div>
+
+<p>The name of “atrous spatial pyramid pooling” is actually illusive because there is no “pooling” in the method. In stead of doing parallel pooling, parallel atrous convolutions were conducted using “same” padding, resulting outputs of same size.</p>
+
+<div class="titled-image">
+<figure>
+    <img src="http://localhost:4000/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/atrous_spatial_pyramid_pooling.png" width="95%" />
+    <figcaption>Atrous Spatial Pyramid Pooling</figcaption>
+</figure>
+</div>
+
+<p>Similarly, the resulting outpus were stacked together as input for the following layers.</p>
+
+<div class="titled-image">
+<figure>
+    <img src="http://localhost:4000/images/blog/2018-08-04-Image-Pyramids-In-Deep-Learning/deeplabv3.png" width="95%" />
+    <figcaption>DeepLab v3+ Network Architecture</figcaption>
+</figure>
+</div>
+
+<p>It is actually easy to implement atrous spatial pyramid pooling in TensorFlow. In <a href="https://www.tensorflow.org/api_docs/python/tf/layers/conv2d">tf.layers.conv2d</a> and <a href="https://www.tensorflow.org/api_docs/python/tf/nn/conv2d">tf.nn.conv2d</a>, we could set the rate in the “dilation_rate” argument. Because DeepLab is a Google product, they even added <a href="https://www.tensorflow.org/api_docs/python/tf/nn/atrous_conv2d">tf.nn.atrous_conv2d</a> lately. However it is nothing fancy but a wrapper for tf.nn.conv2d. Finally, remember to set the “padding” argument to “same”.</p>
+
+<h3 id="references">References</h3>
+
+<p>[1] E.H. Andelson and C.H. Anderson and J.R. Bergen and P.J. Burt and J.M. Ogden. “<a href="http://persci.mit.edu/pub_pdfs/RCA84.pdf">Pyramid methods in image processing</a>”. 1984.</p>
+
+<p>[2] K. He, X. Zhang, S. Ren, and J. Sun. Spatial pyramid pooling in deep convolutional networks for visual recognition. ECCV, 2014.</p>
+
+<p>[3] H. Zhao, J. Shi, X. Qi, X. Wang, and J. Jia. Pyramid scene parsing network. CVPR, 2017.</p>
+
+<p>[4] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, and A. L. Yuille. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs. TPAMI, 2017.</p>
+
+<p>[5] L.-C. Chen, G. Papandreou, F. Schroff, and H. Adam. Rethinking atrous convolution for semantic image segmentation. arXiv:1706.05587, 2017.</p>
+
+<p>[6] L.-C. Chen, Y. Zhu, G. Papandreou, F. Schroff, H. Adam. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation. arXiv:1802.02611, 2018.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+        </div>
+       <!-- <p class="byline"><strong>Image Pyramids and Its Applications in Deep Learning</strong> was published on <time datetime="2018-08-04T00:00:00-07:00">August 04, 2018</time> and last modified on <time datetime="2018-08-04">August 04, 2018</time> by <a href="http://localhost:4000" title="About Vinit Sheth">Vinit Sheth</a>.</p> -->
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    <span>&copy; 2019 Vinit Sheth. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<!-- Old
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-133931159-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+<!-- New -->
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133931159-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vinitsheth-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>

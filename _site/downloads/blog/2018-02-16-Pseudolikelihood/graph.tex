@@ -1,0 +1,20 @@
+\documentclass[11pt]{report}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+
+\tikz
+{
+\node[circle, draw] (a) at (-3.8,2) {$X_1$};
+\node[circle, draw] (b) at (-1.8,2) {$X_2$};
+\node[circle, draw] (c) at (-2.8,0.5) {$X_3$};
+\draw (a) edge[-] (b) (b) edge[-] (c)  (c) edge[-] (a)
+}
+
+\end{tikzpicture}
+
+$$X_1 \in  \{a_1, a_2, a_3, a_4\}$$
+$$X_2 \in  \{b_1, b_2, b_3, b_4\}$$
+$$X_3 \in  \{c_1, c_2, c_3, c_4\}$$
+\end{document}

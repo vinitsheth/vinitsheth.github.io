@@ -1,0 +1,373 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+    <style type="text/css">
+	    .article-wrap img{border-radius: 5px;}
+		.titled-image figure{text-align: center;}
+	</style>
+	<meta charset="utf-8">
+<title>Vinit Sheth's Website  &#8211; Making Reinforcement Learning Agent Library </title>
+<meta name="description" content="">
+<meta name="keywords" content="artificial intelligence, deep learning, reinforcement learning">
+
+
+
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Making Reinforcement Learning Agent Library">
+<meta property="og:description" content="Welcome to my site.">
+<meta property="og:url" content="http://localhost:4000/article/Reinforcement-Learning-Agent-Library/">
+<meta property="og:site_name" content="Vinit Sheth's Website">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/article/Reinforcement-Learning-Agent-Library/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Vinit Sheth's Website Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/academicons.css" />
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="http://localhost:4000/images/apple-icon-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000">Vinit Sheth's Website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				<li><a href="http://localhost:4000/cv/" >Curriculum</a></li>
+		        
+				<li><a href="http://localhost:4000/projects/" >Projects</a></li>
+		        
+				<li><a href="http://localhost:4000/courses/" >Courses</a></li>
+		        
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+  </div>
+  <article>
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/article/Reinforcement-Learning-Agent-Library/" rel="bookmark" title="Making Reinforcement Learning Agent Library">Making Reinforcement Learning Agent Library</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="ideas">Ideas</h3>
+
+<p>When I was developing learning agents using different reinforcement learning algorithms, somehow I made these learning agents into class. All these learning agents take the current environment state, the action for the current environment state, the reward got after taking the action, the next environment state, and also possible the next action for the next environment state, as input. They all output actions when given the environment state. So all these learning agents could be employed and tested in different learning enviroments, especially the OpenAI Gym environment.</p>
+
+<p><br /></p>
+
+<p>I have already implemented several learning agents and prepared the corresponding enviroment running script in my <a href="https://github.com/leimao/OpenAI">GitHub</a>. One could simply change the enviroment name and the learning agent to import in the environment running script to test.</p>
+
+<p><br /></p>
+
+<p>I just came up with this idea. So there is still no documentation of how to use these learning agents on your own computer. The Python expert might find easy to use it because you only have to change a little bit in the raw code in order to make it work. However, the Python beginners might have to wait me to get some time to arrange these learning agents to more formal classes and write official documentations.</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/rl.jpg" alt="" /></p>
+
+<h3 id="talk-about-algorithms">Talk About Algorithms</h3>
+
+<h4 id="actor-critic-policy-gradient">Actor-Critic Policy Gradient</h4>
+
+<p>In the <a href="https://leimao.github.io/article/REINFORCE-Policy-Gradient.html">REINFORCE Policy Gradient reinforcement learning algorithm</a>, we calculate the value of the next state after taking the action $G_t$ ($v_t$) from the rewards in the whole episode and use it to guide our gradient descent. So it is a statistically sampled value. One could actually construct another neural network to represent the value of the state and update it routinely until we get the a good estimate of the true value of the state.</p>
+
+<p><br /></p>
+
+<p>The policy network output the action and use the value of the next state to guide its future actions. So the policy network is just like an actor learning how to perform. The value network use the reward after the actor taking the action to estimate the value of the state, and provide this information to the actor. So the value network is just like an critic informing whether the actor did good or bad. This circus is called “Actor-Critic” Policy Gradient method.</p>
+
+<p><br /></p>
+
+<p>The <a href="http://incompleteideas.net/sutton/book/the-book-2nd.html">Sutton Book draft</a> provided the pseudocode for one-step Actor-Critic method. However it is episodic (see below).</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/actor-critic_episodic.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>I did not find a pseudocode continuing case in this draft. However, we just have to modify this pseudocode a little bit to get the pseudocode for the continuing case. To do this, simply remove everything that is related to I (see below).</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/actor-critic_continuing.jpg" alt="" /></p>
+
+<p><br /></p>
+
+<p>I should also mention that the value we used to guide our gradient descent is different to what we used in REINFORCE. This value is called time-dependent error (td_error). It will not affect the direction of our gradient descent mathematically but tune the step width to make our training have less variance (in principal). Please see “REINFORCE with Baseline” in the Sutton Book draft for more details.</p>
+
+<p><br /></p>
+
+<p>Despite the update for the critic value network, everything is very similar to the REINFORCE Policy Gradient method.</p>
+
+<p><br /></p>
+
+<p>I tested the algorithm in the CartPole environment and uploaded to my GitHub:</p>
+
+<p><a href="https://github.com/leimao/OpenAI/tree/master/OpenAI_Gym_Solutions/CartPole-v0/Actor-Critic/2017-05-08-v1">https://github.com/leimao/OpenAI/tree/master/OpenAI_Gym_Solutions/CartPole-v0/Actor-Critic/2017-05-08-v1</a></p>
+
+<p><br /></p>
+
+<p>The learning performance of the algorithm was submitted to OpenAI Gym:</p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/performance_ac.png" alt="" /></p>
+
+<p><a href="https://gym.openai.com/evaluations/eval_T51WU12pRlWydRLLI9bdg">https://gym.openai.com/evaluations/eval_T51WU12pRlWydRLLI9bdg</a></p>
+
+<h4 id="sarsa-actor-critic-policy-gradient">Sarsa Actor-Critic Policy Gradient</h4>
+
+<p>Sarsa Actor-Critic Policy Gradient is a variant of the Actor-Critic Policy Gradient I talked above. It uses Q-network instead of the value network. You may remember the Q-network is a network to represent the value of state-action pairs. To update the Q-network, instead of using DQN that I used for <a href="https://leimao.github.io/journal/Flappy-Bird-AI.html">Flappy Bird</a>, people tend to use Sarsa (?), a variant method to update Q-network. I should have introduced Sarsa before I introduce Sarsa Actor-Critic Policy Gradient. But when I was doing the implementation, I implemented Sarsa from the Sarsa Actor-Critic Policy Gradient template. I got used to present things in a time-dependent manner, because it is time-saving and easy to tell a story.</p>
+
+<p><br /></p>
+
+<p>The <a href="http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html">Silver Courseware</a> provided the pseudocode for one-step Sarsa Actor-Critic method. It is weird that he called it QAC though it does Sarsa.</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/Sarsa_AC.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>It should also be noted that there is slight gradient descent detail that is different to the Actor-Critic Policy Gradient method I mentioned above. It might be tricky to understand, but it is correct. I have not thought of a straightforward way to explain this to you. So I just skipped it for now.</p>
+
+<p><br /></p>
+
+<p>I tested the algorithm in the CartPole environment and uploaded to my GitHub:</p>
+
+<p><a href="https://github.com/leimao/OpenAI/tree/master/OpenAI_Gym_Solutions/CartPole-v0/Sarsa_Actor-Critic/2017-05-09-v1">https://github.com/leimao/OpenAI/tree/master/OpenAI_Gym_Solutions/CartPole-v0/Sarsa_Actor-Critic/2017-05-09-v1</a></p>
+
+<p><br /></p>
+
+<p>The learning performance of the algorithm was submitted to OpenAI Gym:</p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/performance_sarsa_ac.png" alt="" /></p>
+
+<p><a href="https://gym.openai.com/evaluations/eval_fiRpY1pESl2KJCq9nsRq3w">https://gym.openai.com/evaluations/eval_fiRpY1pESl2KJCq9nsRq3w</a></p>
+
+<h4 id="sarsa">Sarsa</h4>
+
+<p>The basic concept of Sarsa is almost the same to the critic value network I mentioned above, except for the sampling of action. Sarsa Actor-Critic Policy Gradient uses softmax to sample action, Sarsa here use $\epsilon$-greedy to sample action.</p>
+
+<p><br /></p>
+
+<p>The <a href="http://incompleteideas.net/sutton/book/the-book-2nd.html">Sutton Book draft</a> provided the pseudocode for one-step episodic Sarsa method (see below).</p>
+
+<p><br /></p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/Sarsa_episodic.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>I tested the algorithm in the CartPole environment and uploaded to my GitHub:</p>
+
+<p><a href="https://github.com/leimao/OpenAI/tree/master/OpenAI_Gym_Solutions/CartPole-v0/Sarsa/2017-05-09-v1">https://github.com/leimao/OpenAI/tree/master/OpenAI_Gym_Solutions/CartPole-v0/Sarsa/2017-05-09-v1</a></p>
+
+<p><br /></p>
+
+<p>The learning performance of the algorithm was submitted to OpenAI Gym:</p>
+
+<p><img src="http://localhost:4000/images/articles/2017-05-09-Reinforcement-Learning-Agent-Library/performance_sarsa.png" alt="" /></p>
+
+<p><a href="https://gym.openai.com/evaluations/eval_dgUQcF9tSiioTjqMyVOiA">https://gym.openai.com/evaluations/eval_dgUQcF9tSiioTjqMyVOiA</a></p>
+
+<h3 id="comments">Comments</h3>
+
+<p>All the three learning algorithms above are one-stepped. Although they have all solved the problem as is shown in OpenAI Gym evaluations, the still have very big training performance fluctuations, which makes me frustrated. One of my friend told me that I could save the model that has the best averaged training performance during the training, and use it for test. I did that and it worked well. The code is reflected in the code for Sarsa algorithm. To further solve the fluctuation issue, I may try n-stepped version of these algorithms in the future.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+	<img src="http://localhost:4000/images//author_images/VinitSmall.jpg" class="bio-photo" alt="Vinit Sheth bio photo"></a>
+
+<h3>Vinit Sheth</h3>
+<p>Data Science , Machine Learning, Artificial Intelligence.</p>
+
+
+
+<a href="http://linkedin.com/in/vinit-sheth" class="author-social" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+
+
+<a href="http://github.com/vinitsheth" class="author-social" target="_blank"><i class="fa fa-github-square"></i> GitHub</a>
+
+
+
+
+
+
+
+
+
+<a href="http://facebook.com/vinitgsheth" class="author-social" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a>
+<a href="mailto:vsheth2@asu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> E-Mail</a>
+<a href="https://drive.google.com/open?id=1ElcWvlcYgbx_Pw4amAY230AAM5meI6zQ" class="author-social" target="_blank"><i class="fa fa-file"></i>Resume</a>
+        </div>
+       <!-- <p class="byline"><strong>Making Reinforcement Learning Agent Library</strong> was published on <time datetime="2017-05-09T00:00:00-07:00">May 09, 2017</time> and last modified on <time datetime="2017-05-09">May 09, 2017</time> by <a href="http://localhost:4000" title="About Vinit Sheth">Vinit Sheth</a>.</p> -->
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    <span>&copy; 2019 Vinit Sheth. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<!-- Old
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-133931159-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+-->
+<!-- New -->
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-133931159-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vinitsheth-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>
