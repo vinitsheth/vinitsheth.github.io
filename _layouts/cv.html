@@ -89,11 +89,23 @@
 
     <br/>
     <p align="center" class=bottom-small><img src="http://localhost:4000/images/CV/004-briefcase.png" alt="Work Experience" width="70" height="70"></p>
-
+    <br/>
+    <p class="ExperienceHeader">
+        <span class="WorkExTitle">Software Development Engineering Intern</span>
+        <span class="WorkExDate">May 2019 - August 2019</span>
+        <span class="WorkExCompany">Amazon</span>
+        <span class="WorkExLocation">Austin, Texas</span>
+    </p>
+    <p>
+        <span class="WorkExContent">Moved an internal application to Service Oriented Architecture using AWS API Gateway, 
+          Lambda, SignatureV4, IAM, Route53, ACM. Moreover, all the components created using Cloud Formation using Java CDK.
+          </span>
+    </p>
+<br/>
     <p class="ExperienceHeader">
         <span class="WorkExTitle">Graduate Service Assistant</span>
         <span class="WorkExDate">Sept 2018 - May 2019</span>
-        <span class="WorkExCompany">Arizona State University,</span>
+        <span class="WorkExCompany">Arizona State University</span>
         <span class="WorkExLocation">Tempe, Arizona</span>
     </p>
     <p>
@@ -102,6 +114,19 @@
         <span class="WorkExContent">Responsibilities : Grading assignments, homework of the students and providing feedback. 
           Tutoring the students to solve doubts about the assignments, homework and lectures.</span>
     </p>
+<br/>
+    <p class="ExperienceHeader">
+      <span class="WorkExTitle">Design Reviewer for EPICS</span>
+      <span class="WorkExDate">Sept 2018 - Dec 2018</span>
+      <span class="WorkExCompany">Arizona State University</span>
+      <span class="WorkExLocation">Tempe, Arizona</span>
+  </p>
+  <p>
+      <span class="WorkExContent">The Engineering Projects in Community Service program, known as <a href="https://epics.engineering.asu.edu/">EPICS</a>, is a national award-winning social entrepreneurship program. 
+        Teams design, build and deploy systems to solve engineering-based problems for charities, schools and other not-for-profit organizations.</span>
+      <span class="WorkExContent">Responsibilities include providing guided mentorship and feedback on a variety of projects related to the EPICS program.
+         The assistance is related primarily to design reviews and an in-depth review of team material submitted prior to the review.</span>
+  </p>
 		<!---
 	<br/>
 	<p align="center" class=bottom-small><img src="{{ site.url }}/images/CV/001-medal.png" alt="Honors and Awards" width="70" height="70" style="padding:5px;"></p>
@@ -149,6 +174,8 @@
     .css("font-size","smaller");
 
     $(".WorkExCompany")
+    .css("display","block")
+    .css("font-weight","bolder")
     .css("font-size","smaller");
 
     $(".WorkExLocation")
